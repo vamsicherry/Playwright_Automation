@@ -1,0 +1,33 @@
+{
+  "name": "playwright_automation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test_dev":"cross-env ENV_NAME=dev npx playwright test",
+    "test_demo":"cross-env ENV_NAME=demo npx playwright test",
+    "test_dev_chrome":"cross-env ENV_NAME=dev npx playwright test --project=chromium --headed",
+    "test_demo_chrome":"cross-env ENV_NAME=demo npx playwright test --project=chromium --headed",
+    "test_demo_c":"cross-env ENV_NAME=demo npx playwright test --project=chromium --headed"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.56.1",
+    "@types/crypto-js": "^4.2.2",
+    "@types/node": "^24.10.0",
+    "allure-playwright": "^3.4.2"
+  },
+  "dependencies": {
+    "@axe-core/playwright": "^4.11.0",
+    "@faker-js/faker": "^10.1.0",
+    "cross-env": "^10.1.0",
+    "crypto-js": "^4.2.0",
+    "csv-parse": "^6.1.0",
+    "dotenv": "^17.2.3",
+    "luxon": "^3.7.2",
+    "xlsx": "^0.18.5"
+  }
+}
