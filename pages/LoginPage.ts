@@ -3,9 +3,10 @@ import {Page,Locator} from '@playwright/test'
 export class LoginPage
 {
       private readonly page:Page;
-      private readonly userNameInput:Locator;
+      readonly userNameInput:Locator;
       private readonly passwordInput:Locator;
       private readonly loginButton:Locator;
+      private readonly invalidCredentials:Locator;
 
 
       constructor(page:Page)
@@ -14,11 +15,12 @@ export class LoginPage
            this.userNameInput=page.locator("input[name='username']");
            this.passwordInput=page.locator("input[name='password']");
            this.loginButton=page.getByRole('button',{name:' Login '});
+           this.invalidCredentials=page.getByText('Invalid credentials');
       }
 
       async goToOrangeHRM()
       {
-          await this.page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
+          await this.page.goto(`${process.env.BASE_URL}/web/index.php/auth/login`);
       }
 
       
@@ -27,5 +29,10 @@ export class LoginPage
              await this.userNameInput.fill(uname);
              await this.passwordInput.fill(pname);
              await this.loginButton.click();
+      }
+
+      async viewInvalidCredientils():Promise<string>
+      {
+            return await this.invalidCredentials.innerText() ?? '';
       }
 }

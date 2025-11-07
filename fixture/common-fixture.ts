@@ -1,4 +1,4 @@
-import {test as BaseTest} from '../fixture/pom-fixture';
+import { test as BaseTest } from './pom-fixture';
 import { Commonutils } from '../utils/common-utils';
 
 
@@ -15,4 +15,3 @@ export const test=BaseTest.extend<CommonFixture>({
          }
 })
 
-export {expect} from '@playwright/test';

@@ -20,7 +20,7 @@ import  path from 'path';
 export default defineConfig({
   testDir: './tests',
   /* Run tests in files in parallel */
-  fullyParallel: false,
+  fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
   /* Retry on CI only */
@@ -43,9 +43,16 @@ export default defineConfig({
 
   /* Configure projects for major browsers */
   projects: [
+     {
+      name: 'setup',
+      testMatch:'globalsetup.ts'
+     },
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      dependencies:['setup'],
+      use: { ...devices['Desktop Chrome'],
+        storageState:'./playwright/.auth/auth.json'
+       },
     },
 
     // {
