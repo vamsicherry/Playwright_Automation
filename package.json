@@ -8,7 +8,12 @@
     "test_demo":"cross-env ENV_NAME=demo npx playwright test",
     "test_dev_chrome":"cross-env ENV_NAME=dev npx playwright test --project=chromium --headed",
     "test_demo_chrome":"cross-env ENV_NAME=demo npx playwright test --project=chromium --headed",
-    "test_demo_c":"cross-env ENV_NAME=demo npx playwright test --project=chromium --headed"
+    "test_demo_c":"cross-env ENV_NAME=demo npx playwright test --project=chromium --headed",
+    "test_demo_cr_ui":"cross-env ENV_NAME=demo npx playwright test --project=chromium --ui",
+    "test_demo_sanity":"cross-env ENV_NAME=demo npx playwright test --grep @sanity",
+    "test_demo_regression": "cross-env ENV_NAME=demo npx playwright test --grep '@regression(?!.*@sanity)'",
+    "test_demo_visualtesting":"cross-env ENV_NAME=demo npx playwright test --grep '@visual"
+
   },
   "keywords": [],
   "author": "",
