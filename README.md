@@ -1,5 +1,6 @@
 Project overview
-Playwright with TypeScript/JavaScript — example test suite demonstrating setup, test structure, and end-to-end automation for modern web applications. Suitable for beginners who want a hands‑on reference for writing and running Playwright tests.
+Playwright with TypeScript/JavaScript — example test suite demonstrating setup, test structure, and end-to-end automation
+for modern web applications. Suitable for beginners who want a hands‑on reference for writing and running Playwright tests.
 
 Prerequisites
 Node.js (latest LTS recommended)
