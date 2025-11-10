@@ -12,7 +12,7 @@ Visual Studio Code or another code editor
 Clone repository
 git clone https://github.com/vamsicherry/Playwright_Automation.git
 
-Install dependencies
+Install dependencies:
 npm install
 
 
