@@ -52,53 +52,53 @@ test('Login] Verify that the user cannot log in with an invalid password.',{tag:
 
 
 
-// test('visual testing',{tag:['@visual'],annotation:{
-//       type:'url',
-//       description:'https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index'
-//  }
-// },async ({goToUrl,commonUtils,loginPage,leftsideNavigation})=>{
-//      const username= commonUtils.decrypted(process.env.USER_NAME!);
-//      const password= commonUtils.decrypted(process.env.PASSWORD!);
+test('visual testing',{tag:['@visual'],annotation:{
+      type:'url',
+      description:'https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index'
+ }
+},async ({goToUrl,commonUtils,loginPage,leftsideNavigation})=>{
+     const username= commonUtils.decrypted(process.env.USER_NAME!);
+     const password= commonUtils.decrypted(process.env.PASSWORD!);
 
-//      await loginPage.loginToOrangeHRM(username,password);
-//     await  expect(leftsideNavigation.sidePannelPage).toHaveScreenshot('sidepannel.png');
-//     await expect(leftsideNavigation.orangehrm).toHaveScreenshot('orangehrm.png')
+     await loginPage.loginToOrangeHRM(username,password);
+    await  expect(leftsideNavigation.sidePannelPage).toHaveScreenshot('sidepannel.png');
+    await expect(leftsideNavigation.orangehrm).toHaveScreenshot('orangehrm.png')
 
 
      
-// })
+})
 
 
-test('visual testing', {
-  tag: ['@visual'],
-  annotation: {
-    type: 'url',
-    description: 'https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index'
-  }
-}, async ({ page, goToUrl, commonUtils, loginPage, leftsideNavigation }) => {
-  const username = commonUtils.decrypted(process.env.USER_NAME!);
-  const password = commonUtils.decrypted(process.env.PASSWORD!);
+// test('visual testing', {
+//   tag: ['@visual'],
+//   annotation: {
+//     type: 'url',
+//     description: 'https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index'
+//   }
+// }, async ({ page, goToUrl, commonUtils, loginPage, leftsideNavigation }) => {
+//   const username = commonUtils.decrypted(process.env.USER_NAME!);
+//   const password = commonUtils.decrypted(process.env.PASSWORD!);
 
-  // Set consistent viewport
-  await page.setViewportSize({ width: 1280, height: 720 });
+//   // Set consistent viewport
+//   await page.setViewportSize({ width: 1280, height: 720 });
 
-  // Disable animations and transitions
-  await page.addStyleTag({ content: '* { transition: none !important; animation: none !important; }' });
+//   // Disable animations and transitions
+//   await page.addStyleTag({ content: '* { transition: none !important; animation: none !important; }' });
 
-  // Login
-  await loginPage.loginToOrangeHRM(username, password);
+//   // Login
+//   await loginPage.loginToOrangeHRM(username, password);
 
-  // Wait for side panel to be visible and page to stabilize
-  await expect(leftsideNavigation.sidePannelPage).toBeVisible();
-  await page.waitForLoadState('networkidle');
+//   // Wait for side panel to be visible and page to stabilize
+//   await expect(leftsideNavigation.sidePannelPage).toBeVisible();
+//   await page.waitForLoadState('networkidle');
 
-  // Visual assertions with threshold
-  await expect(leftsideNavigation.sidePannelPage).toHaveScreenshot(
-  'sidepannel.png',{
-    threshold: 0.02
-  });
+//   // Visual assertions with threshold
+//   await expect(leftsideNavigation.sidePannelPage).toHaveScreenshot(
+//   'sidepannel.png',{
+//     threshold: 0.02
+//   });
 
-  await expect(leftsideNavigation.orangehrm).toHaveScreenshot('orangehrm.png',{
-    threshold: 0.02
-  });
-});
+//   await expect(leftsideNavigation.orangehrm).toHaveScreenshot('orangehrm.png',{
+//     threshold: 0.02
+//   });
+// });
