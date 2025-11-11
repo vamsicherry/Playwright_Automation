@@ -27,7 +27,7 @@ test('Login and go to PIM page and Employees and verify employee add or Not',{ta
 })
 
 
-test.only('INbuit code see of Login and go to PIM page and Employees and verify employee add or Not',{tag:['@regression'],annotation:{
+test('INbuit code see of Login and go to PIM page and Employees and verify employee add or Not',{tag:['@regression'],annotation:{
     type:'link',
     description:'https://opensource-demo.orangehrmlive.com/web/index.php/pim/viewEmployeeList'
 }
